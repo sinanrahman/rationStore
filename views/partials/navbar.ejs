@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="/">
+            🏪 Ration Store
+        </a>
+
+        <!-- Toggle button (mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#rationNavbar" aria-controls="rationNavbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="rationNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Users</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/addUsers">Add Users</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/goods">Goods</a>
+                </li>
+
+                <!-- Logout (optional) -->
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-outline-light btn-sm" href="/login">
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>

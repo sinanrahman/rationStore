@@ -1,0 +1,22 @@
+        body {
+            background: linear-gradient(135deg, #0f5132, #198754);
+            min-height: 100vh;
+        }
+
+        .card {
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .section-title {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        table thead {
+            background-color: #0f5132;
+            color: white;
+        }
+
+        .bpl { color: #dc3545; font-weight: 600; }
+        .apl { color: #12a5d1; font-weight: 600; }

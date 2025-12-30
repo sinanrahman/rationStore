@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Ration Store</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/users.css">
+
+</head>
+
+<body>
+
+    <%- include('partials/navbar') %>
+
+        <!-- Header -->
+        <div class="text-center my-5">
+            <h1 class="store-title">KERALA RATION STORE</h1>
+            <p class="text-light mt-2">Public Distribution System</p>
+        </div>
+
+        <!-- Table Card -->
+        <div class="container mb-5">
+            <div class="card p-4">
+                <h4 class="text-center mb-4 text-success">Beneficiary List</h4>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle">
+                        <thead>
+                            <tr class="text-center">
+                                <th>#</th>
+                                <th>House Name</th>
+                                <th>Ration No</th>
+                                <th>Head of Family</th>
+                                <th>Category</th>
+                                <th>Details</th>
+                                <th>Purchase</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% rationList.forEach((item, index)=> { %>
+                                <tr class="text-center">
+                                    <td>
+                                        <%= index + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= item.houseName %>
+                                    </td>
+                                    <td>
+                                        <%= item.rationNo %>
+                                    </td>
+                                    <td>
+                                        <%= item.name %>
+                                    </td>
+                                    <td class="<%= item.category === 'APL' ? 'category-apl' : 'category-bpl' %>">
+                                        <%= item.category %>
+                                    </td>
+                                    <td>
+                                        <a href="/members/<%= item.rationNo %>" class="btn btn-view">
+                                            View
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="/deals/<%= item.rationNo %>" class="btn btn-deal">
+                                            Check
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    <%- include('partials/footer') %>
+
+
+</body>
+
+</html>

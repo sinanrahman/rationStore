@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User | Kerala Ration Store</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/addUsers.css">
+</head>
+
+<body>
+
+    <%- include('partials/navbar') %>
+
+        <!-- Header -->
+        <div class="text-center my-5">
+            <h1 class="store-title">ADD RATION USER</h1>
+            <p class="text-light mt-2">Register new beneficiary</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+
+                    <div class="card p-4">
+                        <h4 class="text-center mb-4 text-success">User Details</h4>
+
+                        <form action="/addUsers" method="POST">
+
+                            <div class="mb-3">
+                                <label class="form-label">Head of Family</label>
+                                <input type="text" name="name" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">House Name</label>
+                                <input type="text" name="houseName" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Ration Number</label>
+                                <input type="number" name="rationNo" class="form-control" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">Category</label>
+                                <select name="category" class="form-select" required>
+                                    <option value="">Select Category</option>
+                                    <option value="APL">APL</option>
+                                    <option value="BPL">BPL</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-submit w-100">
+                                Add User
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    <%- include('partials/footer') %>
+
+
+</body>
+
+</html>

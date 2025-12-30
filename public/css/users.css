@@ -1,0 +1,60 @@
+        body {
+            background: linear-gradient(135deg, #0f5132, #198754);
+            min-height: 100vh;
+        }
+
+        .store-title {
+            color: #d4af37;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            border-radius: 18px;
+            background: #f8f9fa;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .table thead {
+            background: #0f5132;
+            color: #ffffff;
+        }
+
+        .table tbody tr:hover {
+            background-color: #e6f4ea;
+            transition: 0.3s;
+        }
+
+        .category-apl {
+            color: #198754;
+            font-weight: 600;
+        }
+
+        .category-bpl {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        .btn-view {
+            background: linear-gradient(135deg, #198754, #0f5132);
+            border: none;
+            color: #fff;
+            border-radius: 25px;
+            padding: 6px 18px;
+        }
+
+        .btn-view:hover {
+            background: linear-gradient(135deg, #0f5132, #198754);
+        }
+
+        .btn-deal {
+            background: linear-gradient(135deg, #196887, #0f3c51);
+            border: none;
+            color: #fff;
+            border-radius: 25px;
+            padding: 6px 18px;
+        }
+
+        .btn-deal:hover {
+            background: linear-gradient(135deg, #2c79d7, #192287);
+        }
