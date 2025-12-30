@@ -19,39 +19,25 @@
 
                 <form action="/loginpage" method="post" class="card p-4 shadow">
 
-                    <!-- Username -->
                     <div class="mb-3">
                         <label class="form-label">Username</label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            name="username" 
-                            required
-                        >
+                        <input type="text" class="form-control" name="username" required>
                     </div>
 
-                    <!-- Password -->
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input 
-                            type="password" 
-                            class="form-control" 
-                            name="password" 
-                            required
-                        >
+                        <input type="password" class="form-control" name="password" required>
                     </div>
 
-                    <!-- Submit -->
                     <button type="submit" class="btn btn-success w-100">
                         Login
                     </button>
 
-                    <!-- Error Message -->
-                    <% if (typeof error !== 'undefined') { %>
+                    <% if (typeof error !=='undefined' ) { %>
                         <div class="alert alert-danger mt-3 text-center">
                             <%= error %>
                         </div>
-                    <% } %>
+                        <% } %>
 
                 </form>
 
@@ -60,4 +46,5 @@
     </div>
 
 </body>
+
 </html>

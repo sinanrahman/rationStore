@@ -25,11 +25,3 @@ exports.purchasePage = async (req, res) => {
     }
 
 };
-
-
-// try{
-
-//     }  catch (e){
-//         console.log(e)
-//         res.redirect('/')
-//     }
