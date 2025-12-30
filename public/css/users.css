@@ -25,15 +25,16 @@
             transition: 0.3s;
         }
 
-        .category-apl {
-            color: #198754;
+        td.bpl {
+            color: #dc3545 !important;
             font-weight: 600;
         }
 
-        .category-bpl {
-            color: #dc3545;
+        td.apl {
+            color: #12a5d1 !important;
             font-weight: 600;
         }
+
 
         .btn-view {
             background: linear-gradient(135deg, #198754, #0f5132);
