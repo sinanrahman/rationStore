@@ -16,9 +16,9 @@ app.set('view engine', 'ejs');
 
 // ROUTES
 app.use('/', require('./routes/authRoute'));
-app.use('/',require('./middleware/auth'), require('./routes/rationRoute'));
-app.use('/',require('./middleware/auth'), require('./routes/memberRoute'));
-app.use('/',require('./middleware/auth'), require('./routes/dealRoute'));
+app.use('/', require('./middleware/auth'), require('./routes/rationRoute'));
+app.use('/', require('./middleware/auth'), require('./routes/memberRoute'));
+app.use('/', require('./middleware/auth'), require('./routes/dealRoute'));
 
 
 app.listen(port, async () => {

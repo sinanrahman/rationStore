@@ -10,3 +10,4 @@ router.get("/logout", adminController.logout)
 router.get("/add-admin", adminController.createAdmin)
 
 module.exports = router
+
