@@ -19,32 +19,6 @@ exports.createAdmin = async (req, res) => {
     }
 }
 
-// exports.login = async (req, res) => {
-//   const { username, password } = req.body
-
-//   const admin = await Admin.findOne({ username })
-//   if (!admin)
-//     return res.render("auth/login", { error: "User not found" })
-
-//   const isMatch = await bcrypt.compare(password, admin.password)
-//   if (!isMatch)
-//     return res.render("auth/login", { error: "Password incorrect" })
-
-//   const token = jwt.sign(
-//     { id: admin._id },
-//     process.env.JWT_SECRET,
-//     { expiresIn: "1d" }
-//   )
-
-//   res.cookie("token", token, {
-//     httpOnly: true
-//   })
-
-//   return res.redirect("/")
-// }
-
-
-
 const maxAttempts = 3;
 const lockTime = 10 * 60 * 1000;
 

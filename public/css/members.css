@@ -18,5 +18,12 @@
             color: white;
         }
 
-        .bpl { color: #dc3545; font-weight: 600; }
-        .apl { color: #12a5d1; font-weight: 600; }
+        .bpl {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        .apl {
+            color: #12a5d1;
+            font-weight: 600;
+        }

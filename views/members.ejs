@@ -13,100 +13,100 @@
 <body>
 
 
-        <div class="container mt-4">
-            <a href="/" class="btn btn-outline-light mb-3">
-                ← Back to Users
-            </a>
+    <div class="container mt-4">
+        <a href="/" class="btn btn-outline-light mb-3">
+            ← Back to Users
+        </a>
+    </div>
+
+    <div class="container">
+
+        <div class="card p-4 mb-4 bg-light">
+            <h4 class="text-center section-title mb-4">Head of Family</h4>
+
+            <div class="row text-center fw-bold">
+                <div class="col-md-3">Name</div>
+                <div class="col-md-3">House Name</div>
+                <div class="col-md-3">Ration No</div>
+                <div class="col-md-3">Category</div>
+            </div>
+
+            <div class="row text-center mt-3">
+                <div class="col-md-3">
+                    <%= ration.name %>
+                </div>
+                <div class="col-md-3">
+                    <%= ration.houseName %>
+                </div>
+                <div class="col-md-3">
+                    <%= ration.rationNo %>
+                </div>
+                <div class="col-md-3 fw-bold <%= ration.category === 'BPL' ? 'bpl' : 'apl' %>">
+                    <%= ration.category %>
+                </div>
+            </div>
         </div>
 
-        <div class="container">
+        <div class="card p-4 mb-4 bg-light">
+            <h4 class="text-center text-success mb-3">Add Family Member</h4>
 
-            <div class="card p-4 mb-4 bg-light">
-                <h4 class="text-center section-title mb-4">Head of Family</h4>
+            <form action="/add-member/<%= ration.rationNo %>" method="post">
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label">Member Name</label>
+                        <input type="text" name="memberName" class="form-control" required>
+                    </div>
 
-                <div class="row text-center fw-bold">
-                    <div class="col-md-3">Name</div>
-                    <div class="col-md-3">House Name</div>
-                    <div class="col-md-3">Ration No</div>
-                    <div class="col-md-3">Category</div>
-                </div>
+                    <div class="col-md-5 mb-3">
+                        <label class="form-label">Relation</label>
+                        <input type="text" name="relation" class="form-control" required>
+                    </div>
 
-                <div class="row text-center mt-3">
-                    <div class="col-md-3">
-                        <%= ration.name %>
-                    </div>
-                    <div class="col-md-3">
-                        <%= ration.houseName %>
-                    </div>
-                    <div class="col-md-3">
-                        <%= ration.rationNo %>
-                    </div>
-                    <div class="col-md-3 fw-bold <%= ration.category === 'BPL' ? 'bpl' : 'apl' %>">
-                        <%= ration.category %>
+                    <div class="col-md-2 d-flex align-items-end mb-3">
+                        <button class="btn btn-success w-100">Add</button>
                     </div>
                 </div>
-            </div>
+            </form>
+        </div>
 
-            <div class="card p-4 mb-4 bg-light">
-                <h4 class="text-center text-success mb-3">Add Family Member</h4>
+        <div class="card p-4 bg-light mb-5">
+            <h4 class="text-center text-primary mb-4">Family Members</h4>
 
-                <form action="/add-member/<%= ration.rationNo %>" method="post">
-                    <div class="row">
-                        <div class="col-md-5 mb-3">
-                            <label class="form-label">Member Name</label>
-                            <input type="text" name="memberName" class="form-control" required>
-                        </div>
+            <% if (ration.members.length===0) { %>
+                <p class="text-center text-muted">No members added yet</p>
+                <% } else { %>
 
-                        <div class="col-md-5 mb-3">
-                            <label class="form-label">Relation</label>
-                            <input type="text" name="relation" class="form-control" required>
-                        </div>
-
-                        <div class="col-md-2 d-flex align-items-end mb-3">
-                            <button class="btn btn-success w-100">Add</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="card p-4 bg-light mb-5">
-                <h4 class="text-center text-primary mb-4">Family Members</h4>
-
-                <% if (ration.members.length===0) { %>
-                    <p class="text-center text-muted">No members added yet</p>
-                    <% } else { %>
-
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover text-center align-middle">
-                                <thead>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover text-center align-middle">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Member Name</th>
+                                    <th>Relation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% ration.members.forEach((member, index)=> { %>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Member Name</th>
-                                        <th>Relation</th>
+                                        <td>
+                                            <%= index + 1 %>
+                                        </td>
+                                        <td>
+                                            <%= member.name %>
+                                        </td>
+                                        <td>
+                                            <%= member.relation %>
+                                        </td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <% ration.members.forEach((member, index)=> { %>
-                                        <tr>
-                                            <td>
-                                                <%= index + 1 %>
-                                            </td>
-                                            <td>
-                                                <%= member.name %>
-                                            </td>
-                                            <td>
-                                                <%= member.relation %>
-                                            </td>
-                                        </tr>
-                                        <% }) %>
-                                </tbody>
-                            </table>
-                        </div>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <% } %>
-            </div>
-
+                    <% } %>
         </div>
+
+    </div>
 
 
 </body>
